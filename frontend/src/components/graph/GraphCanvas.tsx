@@ -60,8 +60,8 @@ export default function GraphCanvas({
   highlightedEdges,
   onNodeClick,
 }: GraphCanvasProps) {
-  const [nodes, setNodes, onNodesChange] = useNodesState([])
-  const [edges, setEdges, onEdgesChange] = useEdgesState([])
+const [nodes, setNodes, onNodesChange] = useNodesState<Node>([])
+const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([])
 
   useEffect(() => {
     const rfNodes: Node[] = graphData.nodes.map(n => ({
