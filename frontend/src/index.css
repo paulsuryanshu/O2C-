@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ── React Flow Canvas ───────────────────────────── */
+.react-flow__background {
+  background-color: #080f1e;
+}
+
+/* Make ALL edges white and clearly visible */
+.react-flow__edge-path {
+  stroke: #cbd5e1 !important;
+  stroke-width: 1.5 !important;
+}
+.react-flow__edge.selected .react-flow__edge-path,
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: #ffffff !important;
+  stroke-width: 2.5 !important;
+}
+
+/* Edge labels */
+.react-flow__edge-textbg { fill: #0f172a !important; fill-opacity: 0.85 !important; }
+.react-flow__edge-text { fill: #94a3b8 !important; font-size: 9px !important; }
+
+/* Arrow markers */
+.react-flow__arrowhead { fill: #cbd5e1 !important; }
+
+/* Controls */
+.react-flow__controls {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4) !important;
+}
+.react-flow__controls-button {
+  background: #1e293b !important;
+  border-bottom: 1px solid #334155 !important;
+  color: #94a3b8 !important;
+  fill: #94a3b8 !important;
+}
+.react-flow__controls-button:hover {
+  background: #334155 !important;
+  fill: #fff !important;
+}
+
+/* MiniMap */
+.react-flow__minimap {
+  background: #0f172a !important;
+  border: 1px solid #334155 !important;
+  border-radius: 8px !important;
+}
+
+/* Hide attribution */
+.react-flow__attribution { display: none !important; }
+
+/* ── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* ── Chat markdown ───────────────────────────────── */
+.chat-markdown p { margin-bottom: 0.5rem; line-height: 1.6; }
+.chat-markdown ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 0.5rem; }
+.chat-markdown li { margin-bottom: 0.2rem; }
+.chat-markdown strong { font-weight: 600; color: #f1f5f9; }
+.chat-markdown code {
+  background: #1e293b;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #7dd3fc;
+}
+
+/* ── Animated dots ───────────────────────────────── */
+@keyframes bounce-dot {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-6px); opacity: 1; }
+}
+.bounce-dot { animation: bounce-dot 1.2s infinite ease-in-out; }
+
+/* ── Node hover ──────────────────────────────────── */
+.react-flow__node:hover { filter: brightness(1.15); }
