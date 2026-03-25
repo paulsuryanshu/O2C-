@@ -2,7 +2,7 @@ import axios from 'axios'
 import type { GraphData, GraphStats, NodeDetail, ChatResponse, SearchResult } from '../types'
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_API_URL,
   timeout: 30000,
 })
 
